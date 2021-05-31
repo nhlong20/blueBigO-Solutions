@@ -7,16 +7,16 @@ graph = [[] for _ in range(MAX)]
 def dijktra(src):
   minHeap = []
   dist[src] = 0
-  heapq.heappush(minHeap,(src, 0))
+  heapq.heappush(minHeap,(0, src))
   
   while len(minHeap) > 0:
-    v, cur_dist = heapq.heappop(minHeap)
+    cur_dist, v = heapq.heappop(minHeap)
     if cur_dist != dist[v]: continue
 
     for u, w in graph[v]:
       if dist[v] + w < dist[u]:
         dist[u] = dist[v] + w
-        heapq.heappush(minHeap,(u, dist[u]))
+        heapq.heappush(minHeap,(dist[u], u))
 
 def main():
   n = int(input())
