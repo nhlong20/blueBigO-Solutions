@@ -1,5 +1,5 @@
 MAX = 100 + 1
-NEG_INF = -10**3+1
+NEG_INF = -10**9
 T = int(input())
 
 def bellmanFord(n, edges):
