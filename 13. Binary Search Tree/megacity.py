@@ -13,12 +13,12 @@ for _ in range(n):
   else: 
     S[r] = k
     nRadius.append(r)
-    
+
 nRadius.sort()
-expaned = 0
+expanded = 0
 for r in nRadius:
-  expaned += S[r]
-  if expaned >= need:
+  expanded += S[r]
+  if expanded >= need:
     print(r)
     break
-if expaned < need: print(-1)
+if expanded < need: print(-1)
